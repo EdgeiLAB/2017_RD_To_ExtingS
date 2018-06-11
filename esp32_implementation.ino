@@ -15,7 +15,7 @@
 #include "AudioGeneratorMP3.h"
 #include "AudioOutputI2S.h"
 
-#define LOW_BATTERY  3.80     //3.80
+#define LOW_BATTERY  3.70     //3.80
 #define TIME        100000    // 0.1초
 
 // 핀 선언 및 정의
@@ -29,12 +29,18 @@ const char *passwd = "iotiotiot";
 const char *addr = "mqtt.sktiot.com";
 const char *id = "edgeilab";
 const char *pw = "ZEwxMW9DZmNQK3dudWdRcTV4bVhEK1ByK3U2amtxU3NCWjE0OERNREI3QkUwdCtsSmhZWDQ4eGRURkd0NVFIUw==";
-const char *deviceId = "edgeilab_20180418_esp32_Test";
+
+///////////////////////////////////////////////////////
+/// 변경하기!!!!!!!!!!!!!!!!!!!!!!!!!
+const char *deviceId = "edgeilab_20180611_To_ExtingS_08";
+const char *targetDeviceId = "edgeilab_20180611_To_FireD_01";
+///////////////////////////////////////
+///////////////////////////////////////////////////////
 const char *devicePw = "123456";
 const char *containerSmoke = "Smoke";
 const char *containerGeolocation_latitude = "Geolocation_latitude";
 const char *containerGeolocation_longtitude = "Geolocation_longtitude";
-const char *targetDeviceId = "edgeilab_20180418_esp8266_Test";
+
 
 
 // 객체 생성
@@ -228,7 +234,7 @@ void setup() {
   
 }
 
-int tmp = 0;
+
 void loop() {
 
   mqttClient.loop();

@@ -1,7 +1,7 @@
 void displayBattery() {
-  tft.setCursor(230, 10);  
+  tft.setCursor(200, 10);  
   tft.setTextColor(WROVER_WHITE);  tft.setTextSize(2);  
-  tft.println("B : " + String(voltagePercentage));
+  tft.println("B : " + String(voltageBattery));
 }
 
 void displayString(int row, int col, int textSize, String msg) {

@@ -23,16 +23,20 @@ bool connectingThingplug() {
     printf("4. mqtt create container failed\n");
     return false;
   }
-
+/*
   if(!mqttSubscribe(&mqttClient, targetDeviceId, containerSmoke, callbackFunctionSmoke)) {
     printf("6. mqtt subscribe notification failed\n");
     return false;
   }
+*/
+//  if(!mqttGetLatest(&mqttClient, targetDeviceId, containerSmoke, callbackFunctionSmoke))
 
+ 
   return true;
 }
 
 void mqttPublish_Geolocation() {
+  Serial.println("Publish Geolocation");
   char strLatitude[BUF_SIZE_SMALL];
   char strLongitude[BUF_SIZE_SMALL];
   sprintf(strLatitude, "%f", latitude);
@@ -48,6 +52,8 @@ void mqttPublish_Geolocation() {
     mqttCreateContentInstance(&mqttClient, containerGeolocation_latitude, strLatitude);
     mqttCreateContentInstance(&mqttClient, containerGeolocation_longitude, strLongitude);        
   }
+  memset(strLatitude, 0, BUF_SIZE_SMALL);
+  memset(strLongitude, 0, BUF_SIZE_SMALL);  
 }
 
 void callbackFunctionSmoke(char * data)
